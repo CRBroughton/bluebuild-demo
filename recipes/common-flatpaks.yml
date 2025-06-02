@@ -1,9 +1,8 @@
 type: default-flatpaks
 system:
     install:
-        - io.github.equicord.equibop/x86_64/stable
-        - app.zen_browser.zen/x86_64/stable
-        - md.obsidian.Obsidian
+        - io.github.equicord.equibop
+        - app.zen_browser.zen
         - com.bitwarden.desktop
         - com.transmissionbt.Transmission
-        - com.visualstudio.code/x86_64/stable
+        - com.visualstudio.code
