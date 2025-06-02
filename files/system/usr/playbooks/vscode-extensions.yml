@@ -32,12 +32,6 @@
       
   
   tasks:
-    - name: "Check if VSCode is installed"
-      command: flatpak list --app | grep com.visualstudio.code
-      register: vscode_check
-      failed_when: false
-      changed_when: false
-      
     - name: "Install VSCode extensions"
       shell: "code --install-extension {{ item }}"
       loop: "{{ vscode_extensions }}"
