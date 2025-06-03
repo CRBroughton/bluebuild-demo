@@ -35,7 +35,6 @@
     - name: "Install VSCode extensions"
       shell: "code --install-extension {{ item }}"
       loop: "{{ vscode_extensions }}"
-      when: vscode_check.rc == 0
       register: extension_results
       failed_when: extension_results.rc != 0 and "already installed" not in extension_results.stderr
       changed_when: "'successfully installed' in extension_results.stdout"
