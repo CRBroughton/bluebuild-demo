@@ -22,7 +22,7 @@ modules:
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/pgdev-ghostty-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/lumarel/ghostty/repo/fedora-%OS_VERSION%/lumarel-ghostty-fedora-%OS_VERSION%.repo
     install:
       - fish
       - micro
@@ -48,7 +48,6 @@ modules:
         - org.gnome.Loupe
       remove:
         - org.gnome.eog
-        - ncurses-term
     user: {} # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
