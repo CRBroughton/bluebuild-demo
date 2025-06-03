@@ -52,6 +52,6 @@ modules:
 
   - type: script
     scripts:
-      - 20-install-ghotty.sh
+      - 20-install-ghostty.sh
 
 
