@@ -5,4 +5,3 @@ system:
         - app.zen_browser.zen
         - com.bitwarden.desktop
         - com.transmissionbt.Transmission
-        - com.visualstudio.code
