@@ -1,0 +1,13 @@
+---
+- name: Reload YubiKey services
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Restart pcscd
+      become: true
+      systemd:
+        name: pcscd
+        state: restarted
+        
+    - name: Reload GPG agent  
+      shell: gpg-connect-agent reloadagent /bye

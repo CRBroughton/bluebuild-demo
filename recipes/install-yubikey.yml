@@ -1,0 +1,7 @@
+type: rpm-ostree
+install:
+  - yubikey-manager
+  - gnupg2
+  - pcsc-lite
+  - pcsc-lite-ccid
+  - opensc
