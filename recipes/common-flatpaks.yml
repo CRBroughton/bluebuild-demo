@@ -6,3 +6,4 @@ system:
         - com.bitwarden.desktop
         - com.transmissionbt.Transmission
         - com.heroicgameslauncher.hgl
+        - md.obsidian.Obsidian
