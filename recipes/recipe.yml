@@ -61,6 +61,6 @@ modules:
 
   - type: script
     scripts:
-      - |
-        rpm --import https://packages.microsoft.com/keys/microsoft.asc
-        systemctl enable pcscd
+      - curl -o /tmp/microsoft.asc https://packages.microsoft.com/keys/microsoft.asc
+      - rpm --import /tmp/microsoft.asc
+      - systemctl enable pcscd
