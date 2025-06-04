@@ -61,6 +61,5 @@ modules:
 
   - type: script
     scripts:
-      - curl -o /tmp/microsoft.asc https://packages.microsoft.com/keys/microsoft.asc
-      - rpm --import /tmp/microsoft.asc
-      - systemctl enable pcscd
+      - import-microsoft-key.sh
+      - setup-yubikey.sh 
