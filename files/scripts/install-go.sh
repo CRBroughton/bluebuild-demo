@@ -3,7 +3,7 @@ set -euo pipefail
 
 echo "Installing latest Go..."
 
-# Get latest Go version
+# Get latest Go vearsion
 GO_VERSION=$(curl -s https://go.dev/VERSION?m=text | head -n1)
 GO_TARBALL="$GO_VERSION.linux-amd64.tar.gz"
 
