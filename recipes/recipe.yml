@@ -60,4 +60,5 @@ modules:
     scripts:
       - import-microsoft-key.sh
       - install-go.sh
+      - install-volta.sh
       - setup-yubikey.sh
