@@ -1,0 +1,30 @@
+---
+- name: Reset Container Image Aliases
+  hosts: localhost
+  connection: local
+  gather_facts: true
+  become: false
+  
+  tasks:
+    - name: Check if aliases file exists
+      stat:
+        path: "{{ ansible_env.HOME }}/.cache/containers/short-name-aliases.conf"
+      register: aliases_file
+    
+    - name: Remove aliases file to reset
+      file:
+        path: "{{ ansible_env.HOME }}/.cache/containers/short-name-aliases.conf"
+        state: absent
+      when: aliases_file.stat.exists
+    
+    - name: Display completion message
+      debug:
+        msg:
+          - "Container aliases have been reset"
+          - "Next time you pull an image, you'll get registry choices"
+      when: aliases_file.stat.exists
+    
+    - name: Display no action message
+      debug:
+        msg: "No aliases file found - nothing to reset"
+      when: not aliases_file.stat.exists
