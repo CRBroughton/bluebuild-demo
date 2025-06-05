@@ -59,7 +59,4 @@ modules:
   - type: script
     scripts:
       - import-microsoft-key.sh
-      - install-go.sh
-      - install-volta.sh
-      - install-bun.sh
       - setup-yubikey.sh
