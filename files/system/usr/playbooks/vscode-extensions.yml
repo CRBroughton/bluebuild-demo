@@ -29,6 +29,9 @@
       - ziglang.vscode-zig
       - Catppuccin.catppuccin-vsc-icons
       - vscode-icons-team.vscode-icons
+      - oven.bun-vscode
+      - adpyke.codesnap
+      - formulahendry.auto-rename-tag
       
   
   tasks:
