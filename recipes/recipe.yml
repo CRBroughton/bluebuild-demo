@@ -36,6 +36,7 @@ modules:
       - restic
       - terra-release
       - ghostty
+      - zfs
 
     # remove:
     #   # example: removing firefox (in favor of the flatpak)
