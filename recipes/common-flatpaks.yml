@@ -3,6 +3,7 @@ system:
     install:
         - io.github.equicord.equibop
         - app.zen_browser.zen
+        - com.google.Chrome
         - com.bitwarden.desktop
         - com.transmissionbt.Transmission
         - com.heroicgameslauncher.hgl
