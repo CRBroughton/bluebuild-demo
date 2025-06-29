@@ -60,3 +60,4 @@ modules:
     scripts:
       - import-microsoft-key.sh
       - setup-yubikey.sh
+      - setup-custom-keyboard-layout-shavian.sh
