@@ -28,14 +28,14 @@ modules:
     install:
       - code
       - fish
-      - micro
-      - starship
+      # - micro
+      # - starship
       - ansible
-      - croc
-      - kleopatra
-      - restic
-      - terra-release
-      - ghostty
+      # - croc
+      # - kleopatra
+      # - restic
+      # - terra-release
+      # - ghostty
 
     # remove:
     #   # example: removing firefox (in favor of the flatpak)
