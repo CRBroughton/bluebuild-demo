@@ -170,7 +170,7 @@ xkb_symbols "qwerty" {
 };
 
 partial alphanumeric_keys
-xkb_symbols "qwerty" {
+xkb_symbols "qwerty_inverted" {
 
     name[Group1]= "English (QWERTY, Shavian on AltGr)";
 
