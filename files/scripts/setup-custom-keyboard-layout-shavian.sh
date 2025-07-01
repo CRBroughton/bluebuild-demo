@@ -68,19 +68,34 @@ name_qwerty.text = 'qwerty'
 desc_qwerty = ET.SubElement(config_item_qwerty, 'description')
 desc_qwerty.text = 'English (Shavian, QWERTY)'
 
+# Add inverted QWERTY variant (English on main layer, Shavian on AltGr)
+variant_qwerty_inv = ET.SubElement(variant_list, 'variant')
+config_item_qwerty_inv = ET.SubElement(variant_qwerty_inv, 'configItem')
+name_qwerty_inv = ET.SubElement(config_item_qwerty_inv, 'name')
+name_qwerty_inv.text = 'qwerty_inverted'
+desc_qwerty_inv = ET.SubElement(config_item_qwerty_inv, 'description')
+desc_qwerty_inv.text = 'English (QWERTY, Shavian on AltGr)'
+
 # Write back to file
 tree.write('/usr/share/X11/xkb/rules/evdev.xml', encoding='utf-8', xml_declaration=True)
 print("Successfully added Shavian layout with variants to evdev.xml")
 EOF
 
 # Add entries to evdev.lst
-echo " shavian English (Shavian)" >> /usr/share/X11/xkb/rules/evdev.lst
-echo "  iykury shavian: English (Shavian, Iykury)" >> /usr/share/X11/xkb/rules/evdev.lst
-echo "  igc shavian: English (Shavian, Imperial)" >> /usr/share/X11/xkb/rules/evdev.lst
-echo "  qwerty shavian: English (Shavian, QWERTY)" >> /usr/share/X11/xkb/rules/evdev.lst
+echo "  shavian		English (Shavian)" >> /usr/share/X11/xkb/rules/evdev.lst
+echo "  iykury		shavian: English (Shavian, Iykury)" >> /usr/share/X11/xkb/rules/evdev.lst
+echo "  igc		shavian: English (Shavian, Imperial)" >> /usr/share/X11/xkb/rules/evdev.lst
+echo "  qwerty		shavian: English (Shavian, QWERTY)" >> /usr/share/X11/xkb/rules/evdev.lst
+echo "  qwerty_inverted	shavian: English (QWERTY, Shavian on AltGr)" >> /usr/share/X11/xkb/rules/evdev.lst
 
 echo "Shavian keyboard layout setup complete!"
+echo ""
 echo "Available variants:"
-echo "  setxkbmap shavian iykury"
-echo "  setxkbmap shavian igc" 
-echo "  setxkbmap shavian qwerty"
+echo "  setxkbmap shavian iykury          # Shavian Iykury layout"
+echo "  setxkbmap shavian igc             # Shavian Imperial layout"
+echo "  setxkbmap shavian qwerty          # Shavian QWERTY layout"
+echo "  setxkbmap shavian qwerty_inverted # English QWERTY with Shavian on AltGr"
+echo ""
+echo "The new qwerty_inverted variant provides:"
+echo "  - Normal English QWERTY typing"
+echo "  - Shavian characters accessible via AltGr key"
