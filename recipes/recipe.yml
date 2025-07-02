@@ -36,6 +36,7 @@ modules:
       # - restic
       # - terra-release
       # - ghostty
+      - qpwgraph
 
     # remove:
     #   # example: removing firefox (in favor of the flatpak)
