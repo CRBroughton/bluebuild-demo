@@ -55,6 +55,16 @@ modules:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
 
+  - type: chezmoi
+    repository: "https://github.com/crbroughton/dotfiles"
+    branch: "master"
+    all-users: true # Enable chezmoi for all users automatically
+    file-conflict-policy: "replace" # Override changed files with those from the repo
+    run-every: "1d"
+    wait-after-boot: "5m"
+    disable-init: false # Keep the init service enabled
+    disable-update: false # Keep the update timer enabled
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
   - type: script
