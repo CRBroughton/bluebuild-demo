@@ -1,6 +1,6 @@
 type: default-flatpaks
 configurations:
-    install:
+    - install:
         - io.github.equicord.equibop
         - app.zen_browser.zen
         - com.google.Chrome
