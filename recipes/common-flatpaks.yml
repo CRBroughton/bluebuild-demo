@@ -1,10 +1,12 @@
 type: default-flatpaks
 configurations:
-    - install:
-        - io.github.equicord.equibop
-        - app.zen_browser.zen
-        - com.google.Chrome
-        - com.bitwarden.desktop
-        - com.transmissionbt.Transmission
-        - com.heroicgameslauncher.hgl
-        - md.obsidian.Obsidian
+  - scope: user
+    notify: true
+    install:
+      - io.github.equicord.equibop
+      - app.zen_browser.zen
+      - com.google.Chrome
+      - com.bitwarden.desktop
+      - com.transmissionbt.Transmission
+      - com.heroicgameslauncher.hgl
+      - md.obsidian.Obsidian
