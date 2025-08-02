@@ -1,5 +1,5 @@
 type: default-flatpaks
-system:
+configurations:
     install:
         - io.github.equicord.equibop
         - app.zen_browser.zen
