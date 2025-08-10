@@ -3,47 +3,43 @@
   hosts: localhost
   connection: local
   gather_facts: false
-  
   vars:
-    favourite_apps:
-      - 'app.zen_browser.zen.desktop'
-      - 'org.gnome.Nautilus.desktop'
-      - 'io.github.equicord.equibop.desktop'
-      - 'com.bitwarden.desktop.desktop'
-      - 'code.desktop'
-      - 'com.mitchellh.ghostty.desktop'
-      - 'com.ranfdev.DistroShelf.desktop'
-      - 'steam.desktop'
-      - 'net.lutris.Lutris.desktop'
-      - 'com.heroicgameslauncher.hgl.desktop'
-      - 'md.obsidian.Obsidian.desktop'
-  
+    apps_file_path: "{{ playbook_dir }}/favourite_apps.yml"
   tasks:
+    - name: Load favorite apps from external file
+      include_vars:
+        file: "{{ apps_file_path }}"
+        name: apps_config
+      
+    - name: Set favourite_apps variable from loaded config
+      set_fact:
+        favourite_apps: "{{ apps_config.favourite_apps }}"
+    
     - name: Clear existing favorite applications
       shell: |
         gsettings set org.gnome.shell favorite-apps "[]"
       environment:
         DISPLAY: ":0"
         DBUS_SESSION_BUS_ADDRESS: "unix:path=/run/user/{{ ansible_user_uid | default(1000) }}/bus"
-
+    
     - name: Wait for settings to apply
       pause:
         seconds: 2
-
+    
     - name: Set GNOME shell favorite applications using gsettings
       shell: |
         gsettings set org.gnome.shell favorite-apps "['{{ favourite_apps | join("', '") }}']"
       environment:
         DISPLAY: ":0"
         DBUS_SESSION_BUS_ADDRESS: "unix:path=/run/user/{{ ansible_user_uid | default(1000) }}/bus"
-
+    
     - name: Verify favorite apps setting
       shell: gsettings get org.gnome.shell favorite-apps
       register: current_favorites
       environment:
         DISPLAY: ":0"
         DBUS_SESSION_BUS_ADDRESS: "unix:path=/run/user/{{ ansible_user_uid | default(1000) }}/bus"
-
+    
     - name: Display current favorite apps
       debug:
         msg: "Current favorite apps: {{ current_favorites.stdout }}"

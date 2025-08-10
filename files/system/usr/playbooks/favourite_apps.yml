@@ -1,0 +1,27 @@
+# GNOME Favourite Applications Configuration
+# 
+# This file defines the applications that appear in the GNOME dock/favourites bar.
+# To add a new favourite application:
+# 1. Find the .desktop file name for your application in /usr/share/applications/ or ~/.local/share/applications/
+# 2. Add a new line with the format: - 'application-name.desktop'
+# 3. Maintain proper YAML indentation (2 spaces for each list item)
+#
+# Examples:
+# - 'firefox.desktop'           # Firefox browser
+# - 'org.gnome.Terminal.desktop' # GNOME Terminal
+# - 'libreoffice-writer.desktop' # LibreOffice Writer
+#
+# Note: Applications will appear in the dock in the order listed below
+
+favourite_apps:
+  - 'app.zen_browser.zen.desktop'
+  - 'org.gnome.Nautilus.desktop'
+  - 'io.github.equicord.equibop.desktop'
+  - 'com.bitwarden.desktop.desktop'
+  - 'code.desktop'
+  - 'com.mitchellh.ghostty.desktop'
+  - 'com.ranfdev.DistroShelf.desktop'
+  - 'steam.desktop'
+  - 'net.lutris.Lutris.desktop'
+  - 'com.heroicgameslauncher.hgl.desktop'
+  - 'md.obsidian.Obsidian.desktop'
