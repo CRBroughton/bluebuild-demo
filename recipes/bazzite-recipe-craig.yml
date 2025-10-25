@@ -67,3 +67,4 @@ modules:
       - import-microsoft-key.sh
       - setup-yubikey.sh
       - setup-custom-keyboard-layout-shavian.sh
+      - setup-custom-keyboard-layout-gallium_v2.sh
