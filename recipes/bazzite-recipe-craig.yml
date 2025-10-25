@@ -68,3 +68,4 @@ modules:
       - setup-yubikey.sh
       - setup-custom-keyboard-layout-shavian.sh
       - setup-custom-keyboard-layout-gallium_v2.sh
+      - setup-custom-keyboard-layout-graphite.sh
