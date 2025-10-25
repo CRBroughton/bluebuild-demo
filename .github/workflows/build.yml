@@ -24,7 +24,7 @@ jobs:
         recipe:
           # !! Add your recipes here
           - bazzite-recipe-craig.yml
-          - bazzite-recipe-moon.yml
+          # - bazzite-recipe-moon.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
